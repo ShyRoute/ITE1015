@@ -21,12 +21,12 @@ Canvas::Canvas(size_t row, size_t col) {
 }
 
 Canvas::~Canvas() {
-    for(int i = 0; i < canvas_height; i++) delete[] paper[i];
+    for(int i = 0; i < canvas_height + 1; i++) delete[] paper[i];
     delete[] paper;
 }
 
 void Canvas::Resize(size_t w, size_t h) {
-    for(int i = 0; i < canvas_height; i++) delete[] paper[i];
+    for(int i = 0; i < canvas_height + 1; i++) delete[] paper[i];
     delete[] paper;
 
     canvas_width = w;
